@@ -50,16 +50,11 @@
 
 ## Issue #4 · G4 Filtros y eventos
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** [filter()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [includes()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/includes), [addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener) y [evento input](https://developer.mozilla.org/es/docs/Web/API/Element/input_event). Entendí cómo filtrar sin modificar los datos y escuchar lo que hace el usuario.
 
-1. **Predice y comprueba:** después de ejecutar `filtrarPorTipo(rutas, 'cafe')` en la consola, ¿cuánto vale `rutas.length`? ¿Por qué?
-   _Tu respuesta_
-
-2. **Explica el recorrido:** describe paso a paso qué pasa desde que la persona hace clic en el botón "Cultura" hasta que aparecen las tarjetas nuevas. Menciona: el evento, `estado`, `aplicarFiltros()`, `filtrarPorTipo()` y `pintarRutas()`.
-   _Tu respuesta_
-
-3. **¿Qué pasaría si…** usas el evento `'change'` en lugar de `'input'` en el buscador? Pruébalo y describe la diferencia.
-   _Tu respuesta_
+1. **Longitud original:** `rutas.length` sigue siendo 11 después de filtrar por café. `filter()` devuelve un arreglo nuevo con 2 rutas, pero no elimina nada del original.
+2. **Clic en Cultura:** El evento `click` cambia `estado.tipo` a `cultura`. Luego `aplicarFiltros()` llama a `filtrarPorTipo()`, combina la búsqueda y `pintarRutas()` genera otra vez las tarjetas. También se actualizan `active` y `aria-pressed` del botón.
+3. **Input y change:** El evento `input` busca mientras escribo. Con `change`, en un campo de texto normalmente tendría que terminar la edición o salir del campo para ver los cambios.
 
 ---
 
