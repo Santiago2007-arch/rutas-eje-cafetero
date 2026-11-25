@@ -60,13 +60,8 @@
 
 ## Reto · Ordenar rutas
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** [sort()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), [localeCompare()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare), [spread](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax) y [node:test](https://nodejs.org/api/test.html). Aprendí a ordenar números y textos, y a probar que el arreglo original no cambie.
 
-1. **Explica:** ¿por qué `ordenarRutas` hace `const copia = [...lista]` antes de `sort()`? ¿Qué le pasaría a `rutas` si no se copia? ¿Qué prueba tuya lo demuestra?
-   _Tu respuesta_
-
-2. **Explica:** en `copia.sort((a, b) => a.precio - b.precio)`, ¿qué significa que la función devuelva un número negativo, cero o positivo?
-   _Tu respuesta_
-
-3. **Tus pruebas:** elige una de tus pruebas y explica qué error de programación detectaría si alguien dañara la función.
-   _Tu respuesta_
+1. **Copia antes de ordenar:** Uso `const copia = [...lista]` porque `sort()` sí modifica el arreglo al que se aplica. Sin la copia, las rutas originales cambiarían de orden. Mi cuarta prueba verifica que los identificadores sigan en el orden original.
+2. **Comparador:** Si devuelve un número negativo, `a` queda antes de `b`. Si devuelve cero, se considera empate. Si es positivo, `b` va antes de `a`.
+3. **Mis pruebas:** La prueba de precios comprueba que las rutas gratuitas vayan primero y que los demás precios aumenten. Detectaría un error si alguien ordenara de mayor a menor usando `b.precio - a.precio`. También agregué pruebas para nombres, duración, copia del original, criterio desconocido y lista vacía.

@@ -2,7 +2,7 @@
 
 Catálogo de rutas turísticas del Eje Cafetero (Caldas, Risaralda y Quindío).
 Las tarjetas **no están escritas a mano**: JavaScript las construye a partir de los datos en `js/datos.js`,
-y se pueden filtrar por tipo y buscar por nombre o municipio.
+y se pueden filtrar por tipo, buscar por nombre o municipio y ordenar por nombre, precio o duración.
 
 - **Aprendiz:** Santiago Vélez Valencia
 - **Ficha:** 3349882 · Tecnólogo en Análisis y Desarrollo de Software · SENA CDITI
@@ -13,7 +13,7 @@ y se pueden filtrar por tipo y buscar por nombre o municipio.
 ## Tecnologías
 - HTML semántico + Bootstrap 5.3 (CDN): navbar con collapse, btn-group, cards y grilla
 - CSS propio con variables (`css/estilos.css`) como guía de estilo
-- JavaScript: arreglos de objetos, `map()`, `filter()`, template literals y eventos
+- JavaScript: arreglos de objetos, `map()`, `filter()`, template literals, eventos y `sort()`
 
 ## Guía de estilo
 | Token | Valor | Uso | Contraste |
@@ -39,3 +39,6 @@ tests/            pruebas automáticas (no modificar las 1-4)
 APRENDIZAJES.md   mis explicaciones de cómo funciona cada parte
 img/              ilustraciones
 ```
+
+## Ordenamiento
+El selector permite ordenar por nombre, precio o duración, combinando la opción elegida con los filtros y la búsqueda. Se usa una copia del arreglo para no modificar los datos originales.

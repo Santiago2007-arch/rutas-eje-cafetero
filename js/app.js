@@ -169,7 +169,11 @@ function buscarPorTexto(lista, texto) {
  * Tus pruebas van en tests/reto.test.js.
  * ============================================================ */
 function ordenarRutas(lista, criterio) {
-  // TODO: implementar (RETO)
+  const copia = [...lista];
+  if (criterio === 'nombre') return copia.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+  if (criterio === 'precio') return copia.sort((a, b) => a.precio - b.precio);
+  if (criterio === 'duracion') return copia.sort((a, b) => a.duracionHoras - b.duracionHoras);
+  return copia;
 }
 
 /* ============================================================
@@ -177,13 +181,13 @@ function ordenarRutas(lista, criterio) {
  * El estado guarda qué eligió la persona. Cada evento cambia el
  * estado y vuelve a pintar todo desde los DATOS.
  * ============================================================ */
-const estado = { tipo: 'todos', texto: '' };
+const estado = { tipo: 'todos', texto: '', orden: '' };
 
 function aplicarFiltros() {
   // ?? rutas -> mientras una función no esté implementada (devuelve undefined), se usan todas las rutas
   let resultado = filtrarPorTipo(rutas, estado.tipo) ?? rutas;
   resultado = buscarPorTexto(resultado, estado.texto) ?? resultado;
-  // RETO: aquí también se aplica ordenarRutas(resultado, estado.orden)
+  resultado = ordenarRutas(resultado, estado.orden);
   pintarRutas(resultado, document.querySelector('#lista-rutas'), document.querySelector('#resultado'));
 }
 
@@ -232,6 +236,12 @@ function iniciar() {
   const buscador = document.querySelector('#buscador');
   buscador.addEventListener('input', (evento) => {
     estado.texto = evento.target.value;
+    aplicarFiltros();
+  });
+
+  const orden = document.querySelector('#orden');
+  orden.addEventListener('change', (evento) => {
+    estado.orden = evento.target.value;
     aplicarFiltros();
   });
 
