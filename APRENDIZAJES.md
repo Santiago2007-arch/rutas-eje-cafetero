@@ -6,22 +6,17 @@
 >
 > Este archivo forma parte de la calificación del reto (criterio *Comprensión*).
 
-**Aprendiz:** _tu nombre_
+**Aprendiz:** Santiago Vélez Valencia
 
 ---
 
 ## Issue #1 · G1 Guía de estilo
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** [Variables CSS en MDN](https://developer.mozilla.org/es/docs/Web/CSS/Using_CSS_custom_properties), [variables de Bootstrap](https://getbootstrap.com/docs/5.3/customize/css-variables/) y [WebAIM](https://webaim.org/resources/contrastchecker/). Aprendí que se puede usar `var()` para reutilizar colores y que Bootstrap tiene variables propias para cada botón.
 
-1. **Explica:** ¿qué ventaja tiene escribir los colores como variables en `:root` en vez de escribir el hex directamente en cada regla?
-   _Tu respuesta_
-
-2. **Experimenta y explica:** en DevTools selecciona el botón "Ver rutas", pestaña *Computed* (o *Calculado*) y busca `--bs-btn-bg`. ¿De dónde sale su valor? ¿Por qué cambiar `--bs-primary` no habría cambiado el color del botón?
-   _Tu respuesta_
-
-3. **¿Qué pasaría si…** enlazas `estilos.css` ANTES de `bootstrap.min.css` en el `<head>`? Pruébalo, describe lo que ves y vuelve a dejarlo como estaba.
-   _Tu respuesta_
+1. **Variables CSS:** Me sirven para definir los colores una sola vez y mantener el mismo estilo. Si quiero cambiar el verde de la página, modifico una variable y se refleja en varios componentes.
+2. **Color del botón:** El botón “Ver rutas” usa `--bs-btn-bg`, al que le asigné `var(--eje-primario)` en `.btn-primary`. No basta cambiar `--bs-primary`, porque el botón usa sus propias variables.
+3. **Orden de CSS:** Mi archivo debe estar después de Bootstrap para que mis reglas puedan sobrescribir las de la librería. Si lo pongo antes, algunas personalizaciones pueden dejar de verse. Debo comprobarlo temporalmente en el navegador y devolver el archivo a su orden original.
 
 ---
 
