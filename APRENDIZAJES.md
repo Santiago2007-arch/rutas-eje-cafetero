@@ -22,16 +22,11 @@
 
 ## Issue #2 · G2 Componentes
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** [Navbar Bootstrap](https://getbootstrap.com/docs/5.3/components/navbar/#responsive-behaviors), [Button group](https://getbootstrap.com/docs/5.3/components/button-group/) y [aria-pressed](https://developer.mozilla.org/es/docs/Web/Accessibility/ARIA/Attributes/aria-pressed). Vi cómo Bootstrap usa atributos `data-bs-*` y cómo ARIA comunica el estado.
 
-1. **Explica:** ¿qué relación hay entre `data-bs-target="#menu"` en el botón y el `id="menu"` del div? ¿Quién lee ese atributo?
-   _Tu respuesta_
-
-2. **Experimenta:** abre y cierra el menú en un ancho de celular y observa en DevTools el atributo `aria-expanded` del botón. ¿Qué pasa con su valor? ¿Para quién es útil esa información?
-   _Tu respuesta_
-
-3. **¿Qué pasaría si…** en un botón de filtro escribes `data-tipo="café"` (con tilde)? Piensa en lo que hay en `datos.js` antes de responder.
-   _Tu respuesta_
+1. **Relación entre los atributos:** `data-bs-target="#menu"` apunta al elemento que tiene `id="menu"`. El JavaScript de Bootstrap lee ese atributo para abrir o cerrar el menú.
+2. **Menú adaptable:** Al abrirlo `aria-expanded` debe pasar de `false` a `true`, y al cerrarlo vuelve a `false`. Sirve para que las personas que usan lector de pantalla sepan si está abierto. Esto se puede observar en DevTools.
+3. **Valor de café:** Si uso `data-tipo="café"` con tilde, el filtro no encuentra coincidencias, porque en `datos.js` el tipo está guardado como `cafe` sin tilde.
 
 ---
 
