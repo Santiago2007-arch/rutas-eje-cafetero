@@ -6,7 +6,7 @@ y se pueden filtrar por tipo, buscar por nombre o municipio y ordenar por nombre
 
 - **Aprendiz:** Santiago Vélez Valencia
 - **Ficha:** 3349882 · Tecnólogo en Análisis y Desarrollo de Software · SENA CDITI
-- **Sitio publicado (GitHub Pages):** https://santiago2007-arch.github.io/rutas-eje-cafetero/ (pendiente de activar GitHub Pages)
+- **Sitio publicado (GitHub Pages):** https://santiago2007-arch.github.io/rutas-eje-cafetero/ 
 
 - **Lo que aprendí:** ver [APRENDIZAJES.md](APRENDIZAJES.md)
 
