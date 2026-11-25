@@ -32,27 +32,19 @@
 
 ## Issue #3 · G3 Datos → tarjetas
 
-**Consulté:** _enlace(s)_ → _qué encontré_
+**Consulté:** [map()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [join()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/join), [plantillas literales](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals). Aprendí que `map()` genera un arreglo nuevo y `join('')` une sus elementos en un texto.
 
-1. **Predice y comprueba:** antes de ejecutarlas en la consola del navegador, escribe qué crees que devuelve cada línea. Después ejecútalas y anota el resultado real.
-   ```js
-   [1, 2, 3].map((n) => n * 10)
-   ['a', 'b', 'c'].join('')
-   ['a', 'b', 'c'].join(' - ')
-   rutas.map((r) => r.nombre).length
-   ```
-   | Línea | Mi predicción | Resultado real |
+1. **Predicción y comprobación (expresiones para ejecutar en la consola):**
+
+   | Línea | Mi predicción | Resultado esperado |
    |---|---|---|
-   | 1 | | |
-   | 2 | | |
-   | 3 | | |
-   | 4 | | |
+   | 1 | [10, 20, 30] | [10, 20, 30] |
+   | 2 | abc | abc |
+   | 3 | a - b - c | a - b - c |
+   | 4 | 11 | 11 |
 
-2. **Experimenta y explica:** quita temporalmente `.join('')` de `pintarRutas`. ¿Qué aparece entre las tarjetas y por qué? (Pista: ¿qué hace `innerHTML` cuando le asignas un arreglo?). Vuelve a ponerlo.
-   _Tu respuesta_
-
-3. **Explica:** ¿por qué la tarjeta se escribe con comillas invertidas `` ` `` y no con comillas simples `' '`? ¿Qué hace `${ }`?
-   _Tu respuesta_
+2. **Sin join:** Al quitar `.join('')` aparecen comas entre las tarjetas, porque un arreglo convertido a texto usa comas como separadores. Con `join('')` se une el HTML sin separadores.
+3. **Comillas invertidas:** Permiten construir un HTML de varias líneas y reemplazar datos con `${ruta.nombre}` o cualquier otra propiedad del objeto. Con comillas simples no se interpolan esos valores.
 
 ---
 
